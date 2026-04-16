@@ -1,75 +1,107 @@
 # RAG Report Assistant 🤖📊
 
-Query any CSV file in plain English using Claude AI. Upload your data, ask questions naturally, and get instant answers with the generated Python code shown transparently.
+An AI-powered analytics tool that lets users query CSV data in plain English.  
+Upload a dataset, ask business questions naturally, and get instant answers powered by dynamic Pandas code generation.
 
-## What it does
+---
 
-- Upload any CSV file
-- Ask questions in plain English: *"What's the average revenue by region?"*
-- Claude generates Pandas code, runs it, and explains the result clearly
-- Auto-suggests smart questions based on your dataset
-- Shows the generated code so you can learn from it
+## 🚀 Features
 
-## Tech Stack
+- 📂 Upload any CSV dataset
+- 💬 Ask questions in plain English  
+  _Example: "What is the average revenue by region?"_
+- ⚙️ Automatically generates and executes Pandas code
+- 🧠 Returns clear, business-friendly explanations
+- 🔍 Transparent workflow — view the generated code
+- 💡 Smart question suggestions based on dataset schema
 
-| Layer | Technology |
-|-------|-----------|
-| LLM | Anthropic Claude (claude-sonnet-4) |
-| Backend | Python / Flask |
-| Data | Pandas + NumPy |
-| Frontend | HTML / CSS / Vanilla JS |
+---
 
-## Setup
+## 🧱 Tech Stack
+
+| Layer     | Technology                         |
+|----------|-----------------------------------|
+| LLM      | Anthropic Claude (claude-haiku-4-5) |
+| Backend  | Python, Flask                     |
+| Data     | Pandas, NumPy                     |
+| Frontend | HTML, CSS, Vanilla JavaScript     |
+
+---
+
+## ⚙️ Setup
 
 ### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
-```
-
-### 2. Set your Anthropic API key
-```bash
+2. Set your API key
 export ANTHROPIC_API_KEY=your_key_here
-```
-
-### 3. Run the backend
-```bash
+3. Run backend
 python app.py
-```
+4. Start frontend
+python -m http.server 8080
 
-### 4. Open the UI
-Open `index.html` in your browser (or serve it with `python -m http.server 8080`).
+Open:
 
-## Example Questions
-
-- "What is the total sales by category?"
-- "Which product has the highest average price?"
-- "Are there any missing values in the dataset?"
-- "Show me the top 10 customers by revenue"
-- "What is the month-over-month growth trend?"
-
-## Architecture
-
-```
+http://127.0.0.1:8080/index.html
+💡 Example Questions
+What is the total revenue?
+What is the total revenue by region?
+Which product generated the most revenue?
+What is the average price by category?
+Show the top 10 customers by revenue
+Are there any missing values in the dataset?
+🏗️ Architecture
 User (Browser)
     │
     ├─ Upload CSV ──────► Flask /upload ──► Pandas DataFrame (in-memory)
     │
     ├─ Ask Question ────► Flask /query
     │                         │
-    │                         ├─► Claude: Generate Pandas code
-    │                         ├─► Python exec() runs the code
-    │                         └─► Claude: Explain result in English
+    │                         ├─► Claude → Generate Pandas code
+    │                         ├─► Python exec() → Run code
+    │                         └─► Claude → Explain result
     │
-    └─ Get Suggestions ─► Flask /suggest ──► Claude: Analyse schema
-```
+    └─ Suggestions ─────► Flask /suggest ──► Claude → Analyze schema
+⚠️ Limitations
+Supports CSV files only
+Data stored in memory (no persistence)
+Depends on API credits
+Code execution uses exec() (not sandboxed)
+📸 Screenshots
+Query & Answer
 
-## Resume Bullet Points (copy these!)
+Generated Code
 
-> Built an AI-powered RAG report assistant using Python, Flask, and the Anthropic Claude API that lets users query CSV datasets in plain English; Claude dynamically generates and executes Pandas code, then summarises results in business language.
+🧠 How it works
+User uploads a CSV → loaded into Pandas
+User asks a question → sent to Claude
+Claude generates Pandas code
+Backend executes the code
+Result is returned + explained in plain English
+📌 Resume Bullet Points
+Built an AI-powered data analytics assistant using Python, Flask, Pandas, and Anthropic Claude API that translates natural-language queries into executable data transformations, enabling non-technical users to derive insights from structured datasets.
+Designed an LLM-driven analytics pipeline that dynamically generates and executes Pandas code, returning both business-friendly explanations and transparent code outputs for validation and learning.
+🎯 Why this project matters
 
-> Designed an LLM-in-the-loop analytics pipeline where natural language questions are translated to executable Python code by Claude, enabling non-technical stakeholders to self-serve data insights without SQL or Pandas knowledge.
+This project demonstrates:
 
-## Screenshots
+LLM + backend integration
+Real-world data analytics workflows
+Dynamic code generation and execution
+Building tools for non-technical users
 
-### Query & Answer
-![Answer](screenshots/answer.png)
+---
+
+# 💡 What I improved (so you understand)
+
+- Replaced outdated model → `claude-haiku-4-5`
+- Cleaned grammar and tone (less “demo”, more “product”)
+- Added **Features section** (very important)
+- Added **Limitations** (makes you look mature)
+- Added **How it works** (interview gold)
+- Structured setup better
+- Removed clutter / tightened wording
+
+---
+
+# 🚀 Next move (important)
