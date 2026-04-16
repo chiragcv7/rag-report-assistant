@@ -1,0 +1,11 @@
+Order_ID,Customer,Region,Product,Category,Quantity,Price,Order_Date
+1001,Asha,West,Laptop,Electronics,1,1200,2024-01-05
+1002,Rahul,East,Phone,Electronics,2,800,2024-01-07
+1003,Meera,West,Table,Furniture,1,300,2024-01-10
+1004,Vikram,North,Chair,Furniture,4,150,2024-01-12
+1005,Ankit,South,Headphones,Electronics,3,100,2024-01-15
+1006,Sneha,East,Laptop,Electronics,1,1300,2024-01-18
+1007,Ravi,North,Desk,Furniture,2,400,2024-01-20
+1008,Priya,West,Phone,Electronics,1,900,2024-01-22
+1009,Karan,South,Chair,Furniture,2,180,2024-01-25
+1010,Neha,East,Tablet,Electronics,2,600,2024-01-28
