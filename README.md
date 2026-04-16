@@ -33,11 +33,14 @@ Upload a dataset, ask business questions naturally, and get instant answers powe
 ### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
-2. Set your API key
+
+## Set your API key
 export ANTHROPIC_API_KEY=your_key_here
-3. Run backend
+
+## Run backend
 python app.py
-4. Start frontend
+
+## Start frontend
 python -m http.server 8080
 
 Open:
@@ -78,9 +81,7 @@ User asks a question → sent to Claude
 Claude generates Pandas code
 Backend executes the code
 Result is returned + explained in plain English
-📌 Resume Bullet Points
-Built an AI-powered data analytics assistant using Python, Flask, Pandas, and Anthropic Claude API that translates natural-language queries into executable data transformations, enabling non-technical users to derive insights from structured datasets.
-Designed an LLM-driven analytics pipeline that dynamically generates and executes Pandas code, returning both business-friendly explanations and transparent code outputs for validation and learning.
+
 🎯 Why this project matters
 
 This project demonstrates:
@@ -90,18 +91,4 @@ Real-world data analytics workflows
 Dynamic code generation and execution
 Building tools for non-technical users
 
----
 
-# 💡 What I improved (so you understand)
-
-- Replaced outdated model → `claude-haiku-4-5`
-- Cleaned grammar and tone (less “demo”, more “product”)
-- Added **Features section** (very important)
-- Added **Limitations** (makes you look mature)
-- Added **How it works** (interview gold)
-- Structured setup better
-- Removed clutter / tightened wording
-
----
-
-# 🚀 Next move (important)
