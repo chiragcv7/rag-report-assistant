@@ -19,42 +19,47 @@ Upload a dataset, ask business questions naturally, and get instant answers powe
 
 ## 🧱 Tech Stack
 
-| Layer     | Technology                         |
-|----------|-----------------------------------|
-| LLM      | Anthropic Claude (claude-haiku-4-5) |
-| Backend  | Python, Flask                     |
-| Data     | Pandas, NumPy                     |
-| Frontend | HTML, CSS, Vanilla JavaScript     |
+| Layer | Technology |
+|------|------------|
+| LLM | Anthropic Claude (`claude-haiku-4-5`) |
+| Backend | Python, Flask |
+| Data | Pandas, NumPy |
+| Frontend | HTML, CSS, Vanilla JavaScript |
 
 ---
 
 ## ⚙️ Setup
 
 ### 1. Install dependencies
-```bash
 pip install -r requirements.txt
 
-## Set your API key
+### 2. Set your API key
 export ANTHROPIC_API_KEY=your_key_here
 
-## Run backend
+### 3. Run backend
 python app.py
 
-## Start frontend
+### 4. Start frontend
 python -m http.server 8080
 
-Open:
-
+Open in browser:
 http://127.0.0.1:8080/index.html
-💡 Example Questions
-What is the total revenue?
-What is the total revenue by region?
-Which product generated the most revenue?
-What is the average price by category?
-Show the top 10 customers by revenue
-Are there any missing values in the dataset?
 
-###🏗️ Architecture
+---
+
+## 💡 Example Questions
+
+- What is the total revenue?
+- What is the total revenue by region?
+- Which product generated the most revenue?
+- What is the average price by category?
+- Show the top 10 customers by revenue
+- Are there any missing values in the dataset?
+
+---
+
+## 🏗️ Architecture
+
 User (Browser)
     │
     ├─ Upload CSV ──────► Flask /upload ──► Pandas DataFrame (in-memory)
@@ -67,31 +72,43 @@ User (Browser)
     │
     └─ Suggestions ─────► Flask /suggest ──► Claude → Analyze schema
 
-###⚠️ Limitations
-Supports CSV files only
-Data stored in memory (no persistence)
-Depends on API credits
-Code execution uses exec() (not sandboxed)
+---
 
-###📸 Screenshots
-Query & Answer
+## ⚠️ Limitations
 
-Generated Code
+- Supports CSV files only
+- Data stored in memory (no persistence)
+- Depends on API credits
+- Code execution uses `exec()` and is not sandboxed
 
-###🧠 How it works
-User uploads a CSV → loaded into Pandas
-User asks a question → sent to Claude
-Claude generates Pandas code
-Backend executes the code
-Result is returned + explained in plain English
+---
 
-###🎯 Why this project matters
+## 📸 Screenshots
+
+### Query & Answer
+![Answer](screenshots/answer.png)
+
+### Generated Code
+![Code](screenshots/code.png)
+
+---
+
+## 🧠 How it works
+
+1. User uploads a CSV and it is loaded into Pandas
+2. User asks a question in plain English
+3. Claude generates Pandas code to answer it
+4. Backend executes the code
+5. Result is explained in plain English and shown with the generated code
+
+---
+
+
+## 🎯 Why this project matters
 
 This project demonstrates:
 
-LLM + backend integration
-Real-world data analytics workflows
-Dynamic code generation and execution
-Building tools for non-technical users
-
-
+- LLM + backend integration
+- Real-world data analytics workflows
+- Dynamic code generation and execution
+- Building tools for non-technical users
