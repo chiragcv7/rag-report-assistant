@@ -53,7 +53,8 @@ Which product generated the most revenue?
 What is the average price by category?
 Show the top 10 customers by revenue
 Are there any missing values in the dataset?
-🏗️ Architecture
+
+###🏗️ Architecture
 User (Browser)
     │
     ├─ Upload CSV ──────► Flask /upload ──► Pandas DataFrame (in-memory)
@@ -65,24 +66,26 @@ User (Browser)
     │                         └─► Claude → Explain result
     │
     └─ Suggestions ─────► Flask /suggest ──► Claude → Analyze schema
-⚠️ Limitations
+
+###⚠️ Limitations
 Supports CSV files only
 Data stored in memory (no persistence)
 Depends on API credits
 Code execution uses exec() (not sandboxed)
-📸 Screenshots
+
+###📸 Screenshots
 Query & Answer
 
 Generated Code
 
-🧠 How it works
+###🧠 How it works
 User uploads a CSV → loaded into Pandas
 User asks a question → sent to Claude
 Claude generates Pandas code
 Backend executes the code
 Result is returned + explained in plain English
 
-🎯 Why this project matters
+###🎯 Why this project matters
 
 This project demonstrates:
 
